@@ -1,3 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('RG3 홍삼 마케팅 전략 프로젝트가 로드되었습니다.');
+  var toggle = document.getElementById('gnbToggle');
+  var menu = document.getElementById('gnbMenu');
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', function () {
+      menu.classList.toggle('open');
+    });
+
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        menu.classList.remove('open');
+      });
+    });
+  }
+
+  window.addEventListener('scroll', function () {
+    var gnb = document.querySelector('.gnb');
+    if (gnb) {
+      gnb.style.boxShadow =
+        window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,.25)' : 'none';
+    }
+  });
 });

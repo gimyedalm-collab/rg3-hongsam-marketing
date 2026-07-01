@@ -20,7 +20,7 @@ body {
   font-size: 17px;
   line-height: 1.8;
   color: #2d2520;
-  background: #faf6f0;
+  background: #ffffff;
   -webkit-font-smoothing: antialiased;
   word-break: keep-all;
 }
@@ -43,15 +43,15 @@ strong {
 
 /* === Colors (패키징 기반) === */
 :root {
-  --burgundy: #6b1024;
-  --burgundy-dark: #3d0a15;
-  --gold: #c4963c;
-  --gold-light: #d4ac5a;
-  --cream: #faf6f0;
-  --warm: #f3ede4;
-  --text: #2d2520;
-  --text-light: #7a6e63;
-  --border: #e5ddd3;
+  --burgundy: #1a6b4f; /* primary deep green */
+  --burgundy-dark: #0f3a2b; /* gnb/hero dark green */
+  --gold: #2f9e6f; /* fresh green accent */
+  --gold-light: #5cbf94;
+  --cream: #ffffff;
+  --warm: #f2f8f4; /* light mint alt bg */
+  --text: #222a26; /* charcoal */
+  --text-light: #6a7a72;
+  --border: #e4ece7;
 }
 
 /* === GNB === */
@@ -785,7 +785,7 @@ blockquote cite {
   color: #a0102a;
 }
 .lv-mid {
-  background: #fff5e0;
+  background: #eef7f1;
   color: #8a6f00;
 }
 .lv-low {
@@ -854,7 +854,7 @@ blockquote cite {
   background: #0050c0;
 }
 .t {
-  background: #fff8f0;
+  background: #f2f8f4;
   border: 1px solid #e0d0c0;
 }
 .t li::before {
@@ -2085,4 +2085,65 @@ blockquote cite {
   .case-section p {
     font-size: 0.88rem;
   }
+}
+
+/* ===== 모던 클린 화이트 테마 폴리시 (2026.07) ===== */
+body {
+  background: #ffffff;
+}
+.sec {
+  padding: 88px 0;
+}
+.hero {
+  background: linear-gradient(160deg, #0f3a2b 0%, #1a6b4f 100%);
+  padding: 150px 24px 96px;
+}
+.hero h1 {
+  font-size: 2.7rem;
+  letter-spacing: -0.5px;
+}
+.sec-title {
+  font-size: 1.7rem;
+  letter-spacing: -0.4px;
+}
+.gnb {
+  background: rgba(15, 58, 43, 0.96);
+  backdrop-filter: saturate(160%) blur(6px);
+}
+/* 카드류 공통: 큰 라운드 + 부드러운 그림자 + 얇은 테두리 */
+.case-card,
+.stat-card,
+.swot-card,
+.persona-card,
+.kpi-card,
+.ch-card,
+.ads-card,
+.product-card,
+.trend-card,
+.msg-item,
+.action-box,
+.note-box,
+.conclusion-box,
+.msg-box,
+.sim-box,
+.brief-box {
+  border-radius: 18px !important;
+  box-shadow: 0 6px 24px rgba(16, 52, 39, 0.06);
+  border: 1px solid var(--border);
+}
+.case-card:hover,
+.stat-card:hover,
+.persona-card:hover,
+.kpi-card:hover {
+  box-shadow: 0 10px 30px rgba(16, 52, 39, 0.1);
+  transform: translateY(-2px);
+  transition: all 0.18s ease;
+}
+.tbl {
+  border-radius: 14px;
+  overflow: hidden;
+}
+/* 우리 컬럼 강조: 그린 틴트 */
+.col-us {
+  background: #eef7f1 !important;
 }

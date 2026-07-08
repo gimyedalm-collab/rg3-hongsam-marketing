@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RG3 메가파워 실행 로드맵 — 0에서 추석까지</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .rm-4 {
+        background: #0f3a2b;
+      }
+      .rm-5 {
+        background: #2f9e6f;
+      }
+      .rm-6 {
+        background: #c49632;
+      }
+      .tip-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-top: 28px;
+      }
+      .tip-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 26px 28px;
+      }
+      .tip-card h4 {
+        color: var(--burgundy);
+        margin-bottom: 10px;
+        font-size: 1.02rem;
+      }
+      .tip-card p {
+        font-size: 0.93rem;
+        color: var(--text);
+      }
+      .tip-num {
+        display: inline-block;
+        background: var(--warm);
+        color: var(--burgundy);
+        font-weight: 800;
+        font-size: 0.8rem;
+        padding: 2px 10px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 720px) {
+        .tip-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .dday-band {
+        background: var(--burgundy-dark);
+        color: #fff;
+        border-radius: 14px;
+        padding: 34px 30px;
+        text-align: center;
+        margin-top: 36px;
+      }
+      .dday-band strong {
+        color: var(--gold-light);
+      }
+      .dday-band p {
+        font-size: 1.05rem;
+      }
+      .budget-note {
+        font-size: 0.88rem;
+        color: var(--text-light);
+        margin-top: 14px;
+      }
+      .deadline-tag {
+        display: inline-block;
+        background: #fdf3e3;
+        color: #a8720e;
+        font-weight: 700;
+        font-size: 0.78rem;
+        padding: 2px 10px;
+        border-radius: 20px;
+        margin-left: 8px;
+        vertical-align: middle;
+      }
+      .season-flow {
+        display: flex;
+        align-items: stretch;
+        gap: 0;
+        margin-top: 28px;
+        flex-wrap: wrap;
+      }
+      .season-step {
+        flex: 1;
+        min-width: 200px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 24px 22px;
+        position: relative;
+        margin-right: 26px;
+      }
+      .season-step:last-child {
+        margin-right: 0;
+      }
+      .season-step::after {
+        content: '\2192';
+        position: absolute;
+        right: -21px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--gold);
+        font-size: 1.2rem;
+        font-weight: 800;
+      }
+      .season-step:last-child::after {
+        content: none;
+      }
+      .season-when {
+        font-size: 0.78rem;
+        font-weight: 800;
+        color: var(--gold);
+        letter-spacing: 1px;
+        margin-bottom: 6px;
+      }
+      .season-step h4 {
+        color: var(--burgundy-dark);
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+      .season-step p {
+        font-size: 0.88rem;
+        color: var(--text-light);
+      }
+      @media (max-width: 860px) {
+        .season-step {
+          margin-right: 0;
+          margin-bottom: 30px;
+          min-width: 100%;
+        }
+        .season-step::after {
+          content: '\2193';
+          right: 50%;
+          top: auto;
+          bottom: -26px;
+          transform: translateX(50%);
+        }
+        .season-step:last-child {
+          margin-bottom: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="gnb">
+      <div class="gnb-inner">
+        <a href="index.html" class="gnb-logo">RG3 MEGAPOWER</a>
+        <ul class="gnb-menu" id="gnbMenu">
+          <li><a href="#overview">한눈에 보기</a></li>
+          <li><a href="#timeline">6단계 로드맵</a></li>
+          <li><a href="#weekly">주차별 일정</a></li>
+          <li><a href="#budget">예산 흐름</a></li>
+          <li><a href="#tips">실전 팁</a></li>
+          <li><a href="#next-season">추석 이후</a></li>
+          <li><a href="#decisions">오늘 정해주실 것</a></li>
+          <li><a href="index.html">&larr; 전략 제안서</a></li>
+        </ul>
+        <button class="gnb-toggle" id="gnbToggle" aria-label="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <p class="hero-kicker">ONDA MARKETING &middot; EXECUTION ROADMAP</p>
+      <h1>0에서 추석까지,<br />12주 실행 로드맵</h1>
+      <p class="hero-desc">
+        촬영부터 판매까지 &mdash; 순서만 지키면 추석 선물 시즌에 정확히
+        도착합니다.
+      </p>
+      <span class="hero-date">2026. 07</span>
+      <div class="hero-line"></div>
+    </header>
+
+    <!-- 한눈에 보기 -->
+    <section id="overview" class="sec bg-white">
+      <div class="wrap">
+        <h2 class="sec-title"><span class="sec-bar"></span>한눈에 보기</h2>
+        <div class="brief-box">
+          <p class="brief-text">
+            지금은 온라인 기반이 <strong>0</strong>인 상태입니다. 하지만 오히려
+            타이밍은 좋습니다. 지금 시작하면
+            <strong>추석 선물 시즌(9월)에 판매 준비가 정확히 완성</strong
+            >됩니다.
+          </p>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi-card">
+            <p class="kpi-label">총 기간</p>
+            <p class="kpi-value">약 12주</p>
+            <p class="kpi-sub">7월 중순 &rarr; 9월 추석</p>
+          </div>
+          <div class="kpi-card">
+            <p class="kpi-label">실행 단계</p>
+            <p class="kpi-value">6단계</p>
+            <p class="kpi-sub">
+              촬영 &rarr; 상세 &rarr; 입점 &rarr; 리뷰 &rarr; 검색 &rarr; 판매
+            </p>
+          </div>
+          <div class="kpi-card">
+            <p class="kpi-label">리뷰 목표</p>
+            <p class="kpi-value">30~50개</p>
+            <p class="kpi-sub">광고 시작 전 필수 조건</p>
+          </div>
+          <div class="kpi-card">
+            <p class="kpi-label">첫 승부처</p>
+            <p class="kpi-value">추석 선물</p>
+            <p class="kpi-sub">30만 원 = 선물용 가격대</p>
+          </div>
+        </div>
+        <div class="note-box">
+          <h4>왜 이 순서인가</h4>
+          <p>
+            광고부터 트는 것이 아니라
+            <strong>받아줄 그릇(상세페이지 &middot; 리뷰)</strong>을 먼저
+            만듭니다. 홍삼은 &ldquo;남들이 먹어봤는가&rdquo;를 따지는
+            카테고리라, 리뷰 0개 상태의 광고는 비용만 새어 나갑니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6단계 로드맵 -->
+    <section id="timeline" class="sec bg-warm">
+      <div class="wrap">
+        <h2 class="sec-title"><span class="sec-bar"></span>6단계 로드맵</h2>
+        <div class="roadmap">
+          <div class="rm-phase">
+            <div class="rm-head rm-1">
+              <span>STEP 1 &middot; 7월 중순</span><strong>제품 촬영</strong>
+            </div>
+            <div class="rm-body">
+              <ul>
+                <li>
+                  촬영 전 <strong>샷리스트 확정</strong> &mdash; 상세페이지
+                  구성을 먼저 그리고, 거기에 필요한 컷을 역산
+                </li>
+                <li>
+                  제품컷 + 연출컷: 부모님 선물 장면, 하루 한 병 마시는 장면,
+                  성적서 &middot; 패키지 클로즈업
+                </li>
+                <li>
+                  촬영 한 번으로 상세페이지 &middot; 체험단 모집 &middot; 광고
+                  소재까지 커버
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rm-phase">
+            <div class="rm-head rm-2">
+              <span>STEP 2 &middot; 7월 하순</span
+              ><strong>상세페이지 제작</strong>
+            </div>
+            <div class="rm-body">
+              <ul>
+                <li>
+                  포지셔닝 3축:
+                  <strong
+                    >액상 하루 한 병 &middot; 함량 투명 표기 &middot; 하루 1만
+                    원 가성비</strong
+                  >
+                </li>
+                <li>
+                  광고 표현 검수 필수 &mdash; 면역 &middot; 피로 &middot;
+                  항산화까지만 (혈압 &middot; 항암 &middot; 치료 표현 금지)
+                </li>
+                <li>선물 수요를 위한 패키지 &middot; 포장 연출 컷 포함</li>
+              </ul>
+            </div>
+          </div>
+          <div class="rm-phase">
+            <div class="rm-head rm-3">
+              <span>STEP 3 &middot; 8월 초</span><strong>판매 채널 등록</strong>
+            </div>
+            <div class="rm-body">
+              <ul>
+                <li>
+                  <strong>스마트스토어 우선 오픈</strong> &mdash; 네이버 검색
+                  &middot; 리뷰 &middot; 쇼핑 노출의 본진
+                </li>
+                <li>쿠팡은 2순위 (가격 통제 &middot; 수수료 검토 후)</li>
+                <li>
+                  스토어가 열려 있어야 체험단 글에서 구매로 이어짐 &mdash; 순서
+                  엄수
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rm-phase">
+            <div class="rm-head rm-4">
+              <span>STEP 4 &middot; 8월</span
+              ><strong>체험단 &middot; 리뷰 확보</strong>
+            </div>
+            <div class="rm-body">
+              <ul>
+                <li>
+                  목표: <strong>리뷰 30~50개</strong> &mdash; 광고 시작의 전제
+                  조건
+                </li>
+                <li>
+                  체험단 플랫폼(레뷰 &middot; 리뷰노트 등) + 지인 구매 리뷰 병행
+                </li>
+                <li>
+                  30만 원 본품 대신 <strong>소용량 체험팩(예: 5병)</strong> 구성
+                  가능 여부를 클라이언트와 협의 &rarr; 체험단 원가 대폭 절감
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rm-phase">
+            <div class="rm-head rm-5">
+              <span>STEP 5 &middot; 8~9월</span
+              ><strong>네이버 검색 콘텐츠</strong>
+            </div>
+            <div class="rm-body">
+              <ul>
+                <li>
+                  &ldquo;RG3가 뭐예요&rdquo; &middot; &ldquo;액상 홍삼
+                  추천&rdquo; &middot; &ldquo;부모님 홍삼 선물&rdquo; 블로그
+                  &middot; 지식인 선점
+                </li>
+                <li>
+                  경쟁사(더루트)가 TV 광고로 만든 RG3 관심을
+                  <strong>검색 단계에서 가로채는</strong> 전략
+                </li>
+                <li>쉬운 성분 교육 콘텐츠 = 후발주자의 유일한 지름길</li>
+              </ul>
+            </div>
+          </div>
+          <div class="rm-phase">
+            <div class="rm-head rm-6">
+              <span>STEP 6 &middot; 9월</span><strong>추석 시즌 판매</strong>
+            </div>
+            <div class="rm-body">
+              <ul>
+                <li>
+                  네이버 검색광고 소액 시작(월 50만 원 선) &mdash; 리뷰 &middot;
+                  콘텐츠가 깔린 뒤에
+                </li>
+                <li>
+                  선물 프로모션: 선물 포장 &middot; 명절 기획전 &middot; 감사
+                  카드
+                </li>
+                <li>
+                  추석 성과 데이터로 4분기 정기구독 &middot; 재구매 전략 수립
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 주차별 일정 -->
+    <section id="weekly" class="sec bg-white">
+      <div class="wrap">
+        <h2 class="sec-title"><span class="sec-bar"></span>주차별 일정</h2>
+        <div class="table-scroll">
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>주차</th>
+                <th>할 일</th>
+                <th>완료 기준(산출물)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-bold">7월 2주</td>
+                <td>샷리스트 작성 &middot; 촬영 준비(소품 &middot; 장소)</td>
+                <td>샷리스트 확정본</td>
+              </tr>
+              <tr>
+                <td class="td-bold">7월 3주</td>
+                <td>제품 &middot; 연출 촬영</td>
+                <td>보정 완료 원본 컷</td>
+              </tr>
+              <tr>
+                <td class="td-bold">7월 4주</td>
+                <td>상세페이지 카피 &middot; 디자인 제작</td>
+                <td>상세페이지 시안</td>
+              </tr>
+              <tr>
+                <td class="td-bold">8월 1주</td>
+                <td>광고 표현 검수 &rarr; 스마트스토어 오픈</td>
+                <td>스토어 판매 개시</td>
+              </tr>
+              <tr>
+                <td class="td-bold">8월 2~3주</td>
+                <td>체험단 모집 &middot; 발송 (체험팩 협의 선행)</td>
+                <td>체험단 20~30명 모집</td>
+              </tr>
+              <tr>
+                <td class="td-bold">8월 3~4주</td>
+                <td>검색 콘텐츠 발행 시작 (블로그 &middot; 지식인)</td>
+                <td>주 2~3건 발행</td>
+              </tr>
+              <tr class="row-accent">
+                <td class="td-bold">9월 1주</td>
+                <td>리뷰 30개+ 달성 확인 &rarr; 검색광고 시작</td>
+                <td>광고 라이브</td>
+              </tr>
+              <tr class="row-accent">
+                <td class="td-bold">9월 2주~추석</td>
+                <td>추석 선물 프로모션 집중 운영</td>
+                <td>첫 시즌 매출 데이터</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tbl-note">
+          &#8251; 촬영 &middot; 체험팩 등 클라이언트 협의가 필요한 항목이
+          지연되면 전체 일정이 1~2주씩 밀립니다. 7월 내 의사결정이 핵심입니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 예산 흐름 -->
+    <section id="budget" class="sec bg-warm">
+      <div class="wrap">
+        <h2 class="sec-title"><span class="sec-bar"></span>단계별 예산 흐름</h2>
+        <div class="brief-box">
+          <p class="brief-text">
+            비용은 한꺼번에 들어가지 않습니다.
+            <strong>언제 &middot; 어떤 성격의 비용</strong>이 발생하는지만 먼저
+            보시면 됩니다. 정확한 금액은 별도 견적서를 기준으로 합니다.
+          </p>
+        </div>
+        <div class="table-scroll">
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>비용 항목</th>
+                <th>발생 시기</th>
+                <th>성격</th>
+                <th>비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-bold">초기 구축</td>
+                <td>7~8월</td>
+                <td>1회성</td>
+                <td>촬영 &middot; 상세페이지 &middot; 스토어 셋업 포함</td>
+              </tr>
+              <tr>
+                <td class="td-bold">체험단 운영</td>
+                <td>8월 집중</td>
+                <td>1회성(시즌)</td>
+                <td>체험팩 구성 시 원가 대폭 절감</td>
+              </tr>
+              <tr>
+                <td class="td-bold">월 운영</td>
+                <td>8월~</td>
+                <td>매월</td>
+                <td>콘텐츠 발행 &middot; 스토어 &middot; 데이터 관리</td>
+              </tr>
+              <tr class="row-accent">
+                <td class="td-bold">광고비</td>
+                <td>9월~</td>
+                <td>매월 &middot; 별도</td>
+                <td>월 50~100만 원, 리뷰 확보 후 시작 &rarr; 8월까지는 0원</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="budget-note">
+          &#8251; 광고비를 처음부터 쓰지 않는 것이 이 로드맵의 특징입니다.
+          리뷰와 콘텐츠가 깔린 뒤에 시작해야 같은 광고비로 더 높은 효율이
+          나옵니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 실전 팁 -->
+    <section id="tips" class="sec bg-white">
+      <div class="wrap">
+        <h2 class="sec-title">
+          <span class="sec-bar"></span>실전 팁 &middot; 함정 피하기
+        </h2>
+        <div class="tip-grid">
+          <div class="tip-card">
+            <span class="tip-num">TIP 1</span>
+            <h4>샷리스트 없이 촬영하지 않기</h4>
+            <p>
+              상세페이지 구성을 먼저 그리고 필요한 컷을 역산해서 찍어야 합니다.
+              그러지 않으면 &ldquo;예쁜 사진은 많은데 쓸 사진이 없는&rdquo;
+              상황이 생겨 재촬영 비용이 발생합니다.
+            </p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-num">TIP 2</span>
+            <h4>스토어 오픈 &rarr; 체험단, 순서 엄수</h4>
+            <p>
+              체험단이 쓴 글에서 구매 링크로 넘어와야 리뷰가 매출로 이어집니다.
+              스토어가 닫힌 상태의 체험단은 홍보 효과가 절반 이하로 떨어집니다.
+            </p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-num">TIP 3</span>
+            <h4>소용량 체험팩으로 비용 절감</h4>
+            <p>
+              30만 원 본품을 체험단에 뿌리면 원가 부담이 큽니다. 5병 내외 체험팩
+              구성이 가능한지 클라이언트와 먼저 협의하세요. 체험팩은 이후 선물
+              엔트리 상품으로도 활용됩니다.
+            </p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-num">TIP 4</span>
+            <h4>경쟁사의 TV 광고를 역이용</h4>
+            <p>
+              더루트가 TV &middot; 연예인 광고로 &ldquo;RG3&rdquo;라는 성분을
+              시장에 교육하고 있습니다. 그 검색 수요를 네이버 콘텐츠로 받아내는
+              것이 후발주자의 가장 효율적인 전략입니다.
+            </p>
+          </div>
+        </div>
+        <div
+          class="note-box"
+          style="border-left: 4px solid #c0392b; margin-top: 28px"
+        >
+          <h4>&#9888;&#65039; 광고 표현 규제 &mdash; 전 단계 공통</h4>
+          <p>
+            본 제품은 개별인정형 미취득 상태입니다. 상세페이지 &middot; 체험단
+            가이드 &middot; 블로그 &middot; 광고 문구 전부에서
+            <strong>혈압 &middot; 항암 &middot; 치료 표현은 불법</strong>입니다.
+            허용 범위는 면역 &middot; 피로 &middot; 항산화까지. 체험단에게도 이
+            가이드를 반드시 서면으로 전달해야 합니다.
+          </p>
+          <p class="note-small">
+            위반 시 광고주(클라이언트)가 행정처분 대상이 됩니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 추석 이후 -->
+    <section id="next-season" class="sec bg-warm">
+      <div class="wrap">
+        <h2 class="sec-title">
+          <span class="sec-bar"></span>추석은 끝이 아니라 시작
+        </h2>
+        <div class="brief-box">
+          <p class="brief-text">
+            추석 시즌은 <strong>첫 번째 판매 실험</strong>입니다. 여기서 얻은
+            데이터가 그다음 시즌을 더 크게 만듭니다. 홍삼 선물은
+            <strong>추석 &rarr; 설날, 1년에 두 번</strong> 반복되는 시장입니다.
+          </p>
+        </div>
+        <div class="season-flow">
+          <div class="season-step">
+            <p class="season-when">2026. 09</p>
+            <h4>추석 &mdash; 첫 시즌</h4>
+            <p>
+              첫 매출 &middot; 리뷰 &middot; 광고 효율 데이터 확보. 어떤 문구
+              &middot; 어떤 키워드가 팔리는지 검증.
+            </p>
+          </div>
+          <div class="season-step">
+            <p class="season-when">2026. 10~12</p>
+            <h4>4분기 &mdash; 다지기</h4>
+            <p>
+              재구매 유도 &middot; 정기구독 설계. 검색 콘텐츠 누적으로
+              &ldquo;RG3 검색 = 우리&rdquo; 굳히기.
+            </p>
+          </div>
+          <div class="season-step">
+            <p class="season-when">2027. 01~02</p>
+            <h4>설날 &mdash; 2차 시즌</h4>
+            <p>
+              추석 데이터로 정교해진 선물 기획전. 카카오 선물하기 등 채널 확장
+              검토.
+            </p>
+          </div>
+        </div>
+        <div class="note-box" style="margin-top: 28px">
+          <h4>성공 기준 &mdash; 추석 시즌 종료 시점</h4>
+          <p>
+            <strong
+              >리뷰 50개 이상 &middot; 검색 콘텐츠 20건 이상 발행 &middot; 첫
+              시즌 매출 데이터 확보.</strong
+            >
+            이 세 가지가 갖춰지면 설날 시즌은 훨씬 적은 비용으로 더 큰 성과를 낼
+            수 있는 기반이 완성됩니다.
+          </p>
+          <p class="note-small">
+            &#8251; 만에 하나 일정이 지연되어 추석을 놓치더라도, 같은 구조로
+            설날 시즌을 1차 승부처로 전환할 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 오늘 정해주실 것 -->
+    <section id="decisions" class="sec bg-white">
+      <div class="wrap">
+        <h2 class="sec-title"><span class="sec-bar"></span>오늘 정해주실 것</h2>
+        <div class="brief-box">
+          <p class="brief-text">
+            아래 <strong>결정 4가지</strong>만 확정되면 바로 움직일 수 있습니다.
+            이 결정이 늦어지는 만큼 추석까지의 일정이 그대로 밀립니다.
+          </p>
+        </div>
+        <div class="action-box">
+          <h3>결정 4가지</h3>
+          <div class="action-list">
+            <div class="action-item">
+              <span class="action-num">1</span>
+              <div>
+                <strong
+                  >브랜딩 방향 확정
+                  <span class="deadline-tag">오늘</span></strong
+                >
+                <p>
+                  가성비 &middot; 액상 &middot; 함량 투명 &mdash; 이 3축
+                  포지셔닝으로 진행 여부
+                </p>
+              </div>
+            </div>
+            <div class="action-item">
+              <span class="action-num">2</span>
+              <div>
+                <strong
+                  >채널 순서 &middot; 정기구독 도입
+                  <span class="deadline-tag">오늘</span></strong
+                >
+                <p>
+                  스마트스토어 우선 오픈 &rarr; 쿠팡 &rarr; 자사몰 &middot; 구독
+                  순서 승인
+                </p>
+              </div>
+            </div>
+            <div class="action-item">
+              <span class="action-num">3</span>
+              <div>
+                <strong
+                  >광고 예산 &middot; 체험단 진행
+                  <span class="deadline-tag">오늘</span></strong
+                >
+                <p>
+                  9월부터 광고비 월 50~100만 원 &middot; 8월 체험단 운영 승인
+                </p>
+              </div>
+            </div>
+            <div class="action-item">
+              <span class="action-num">4</span>
+              <div>
+                <strong
+                  >상세페이지 &middot; 카피 착수
+                  <span class="deadline-tag">오늘</span></strong
+                >
+                <p>
+                  새 포지셔닝 기준으로 상품명 &middot; 상세페이지 카피 작업 시작
+                  승인
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="action-box" style="margin-top: 24px">
+          <h3>실행에 필요한 준비물 (클라이언트 제공)</h3>
+          <div class="action-list">
+            <div class="action-item">
+              <span class="action-num">A</span>
+              <div>
+                <strong
+                  >촬영용 제품 &middot; 패키지
+                  <span class="deadline-tag">7월 2주까지</span></strong
+                >
+                <p>본품 2~3세트 (개봉 연출용 포함)</p>
+              </div>
+            </div>
+            <div class="action-item">
+              <span class="action-num">B</span>
+              <div>
+                <strong
+                  >시험성적서 &middot; 인증 자료 원본
+                  <span class="deadline-tag">7월 2주까지</span></strong
+                >
+                <p>
+                  금산인삼약초산업진흥원 성적서 등 &mdash; 상세페이지 신뢰
+                  소재의 핵심
+                </p>
+              </div>
+            </div>
+            <div class="action-item">
+              <span class="action-num">C</span>
+              <div>
+                <strong
+                  >소용량 체험팩 구성 가능 여부 회신
+                  <span class="deadline-tag">7월 내</span></strong
+                >
+                <p>5병 내외 체험팩 제작 가능 여부 &mdash; 체험단 비용과 직결</p>
+              </div>
+            </div>
+            <div class="action-item">
+              <span class="action-num">D</span>
+              <div>
+                <strong
+                  >계약 &middot; 초기 구축비 집행
+                  <span class="deadline-tag">7월 중</span></strong
+                >
+                <p>7월 중 집행되어야 촬영 &rarr; 추석 일정이 성립합니다</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dday-band">
+          <p>
+            <strong>지금 시작하면 추석에 정확히 도착합니다.</strong><br />
+            0에서 시작하는 것이 약점이 아니라, 시즌에 맞춰 설계할 수 있는
+            기회입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2026 GRACE Rg3 &middot; ONDA Marketing 실행 로드맵</p>
+      <p class="footer-sub">
+        본 일정은 클라이언트 협의 &middot; 시장 상황에 따라 조정될 수 있습니다.
+      </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
